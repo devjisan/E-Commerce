@@ -1,18 +1,18 @@
 import React from 'react';
-import "./Item.css"
+
+import { Link } from 'react-router-dom';
 
 const Item = (props) => {
     const item = props.value;
-    console.log(item)
     return (
-        <div className='item'>
-            <img src={item.image} alt="" />
-            <p>{item.name}</p>
-            <div className="item-prices">
-                <div className="item-price-new">
+        <div className='w-[350px] hover:scale-105 transform duration-500'>
+            <Link to={`/product/${item.id}`}><img onClick={()=>{window.scrollTo(0,0)}} src={item.image} alt="" /></Link>
+            <p className='my-1.5 mx-0'>{item.name}</p>
+            <div className="flex gap-5">
+                <div className="text-[#374151] text-lg font-semibold">
                     ${item.new_price}
                 </div>
-                <div className="item-price-old">
+                <div className="text-[#8c8c8c] text-lg font-medium line-through">
                     ${item.old_price}
                 </div>
             </div>
