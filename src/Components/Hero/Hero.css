@@ -3,5 +3,14 @@
     background: linear-gradient(100deg, #fde1ff, #e1ffea22 60%);
     display: flex;
     overflow: hidden;
-}
-
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      height: auto;
+      padding: 20px 0;
+    }
+  }
